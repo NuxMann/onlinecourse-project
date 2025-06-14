@@ -168,7 +168,7 @@
               <img src="assets/img/logo-web.png" alt="Logo" />
             </div>
             <p class="footer-description">"Sebuah Platform E-Learning yang dibuat untuk memajukan pendidikan teknologi di Indonesia"</p>
-            <p class="footer-description">-NuxxMann-</p>
+            <p class="footer-description" id="nuxman">-NuxxMann-</p>
           </div>
 
           <div class="footer-right">
@@ -225,18 +225,58 @@
       <!-- End Contact Us -->
     </main>
 
+    <!-- Footer -->
+     <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Tentang Gen Z Course</h3>
+          <p>Platform e-learning terdepan untuk Generasi Z Indonesia. Kami menyediakan kursus-kursus relevan dengan industri terkini untuk membantumu meraih karir impian.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navigasi Cepat</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#kursus">Course</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>Terhubung Dengan Kami</h3>
+          <div class="social-icons">
+            <!-- <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="assets/img/facebook.png" alt="Facebook Icon">
+            </a> -->
+            <!-- <a href="#" class="social-icon" aria-label="Twitter">
+              <img src="assets/img/twitter.png" alt="Twitter Icon">
+            </a> -->
+            <a href="https://www.instagram.com/ryy_0666?igsh=MXQ5MmJya2t1bHhkdQ==" target="_blank" class="social-icon" aria-label="Instagram">
+              <img src="assets/img/ig.png" alt="Instagram Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/fahry-a-1351a7200?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" class="social-icon" aria-label="LinkedIn">
+              <img src="assets/img/linkedin.png" alt="LinkedIn Icon">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Web Course Online by <span class="nux" style="color: #4a90e2;">NuxxMann</span>. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- Footer -->
+
     <script>
       // Ambil elemen navbar
       const navbar = document.querySelector('.navbar');
 
-      // Fungsi yang akan dijalankan saat window di-scroll
+      
       window.onscroll = () => {
-        // Jika posisi scroll vertikal (window.scrollY) lebih besar dari 10 piksel
+        
         if (window.scrollY > 10) {
-          // Tambahkan kelas 'scrolled' ke navbar
           navbar.classList.add('scrolled');
         } else {
-          // Hapus kelas 'scrolled' dari navbar
           navbar.classList.remove('scrolled');
         }
       };
