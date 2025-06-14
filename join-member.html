@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Member - Pendaftaran</title>
+    <link rel="stylesheet" href="assets/css/join-style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="assets/img/logo-web.png" alt="Logo" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="home" href="index.html#home">Home</a></li>
+        <li><a href="index.html#kursus">Course</a></li>
+        <li><a href="index.html#pricing">Pricing Package</a></li>
+        <li><a href="index.html#contact-us">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="form-wrapper">
+      <div class="form-container">
+        <div class="form-header">
+          <a href="index.html" class="logo-link">
+            <img src="assets/img/logo-web.png" alt="Logo" />
+          </a>
+          <h2>Registrasi Member</h2>
+        </div>
+
+        <form action="#" method="POST" class="join-form">
+          <div class="form-group">
+            <label for="full-name">Nama Lengkap</label>
+            <input type="text" id="full-name" name="fullName" placeholder="Masukkan nama lengkap Anda" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="email" placeholder="contoh@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input type="text" id="alamat" name="alamat" placeholder="Tangerang" required />
+          </div>
+          <div class="form-group">
+            <label for="nohp">No. Hp</label>
+            <input type="number" id="nohp" name="nohp" placeholder="089523415671" required />
+          </div>
+          <div class="form-group">
+            <label for="course-select">Pilih Kursus Pertama Anda</label>
+            <select id="course-select" name="course">
+              <option value="">--Pilih Kursus--</option>
+              <option value="fullstack">Full-Stack Web Developer</option>
+              <option value="uiux">UI/UX Design for Beginners</option>
+              <option value="digital-marketing">Digital Marketing Mastery</option>
+              <option value="data-science">Data Science with Python</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Registrasi Sekarang</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
