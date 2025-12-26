@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -14,19 +19,37 @@
       </video>
 
       <nav class="navbar">
-        <div class="nav-logo">
-          <img src="assets/img/logo-web.png" alt="" srcset="" />
-        </div>
-        <ul class="nav-links">
-          <li ><a class="home" href="#home">Home</a></li>
-          <li><a href="#kursus">Course</a></li>
-          <li><a href="#pricing">Pricing Package</a></li>
-          <li><a href="#contact-us">Contact</a></li>
-        </ul>
-        <div class="nav-action">
-          <a href="join-member.html" class="btn-join">Join Sekarang</a>
-        </div>
-      </nav>
+      <div class="nav-logo">
+        <img src="assets/img/logo-web.png" alt="Logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a class="home" href="#home">Home</a></li>
+        <li><a href="#kursus">Course</a></li>
+        <li><a href="#pricing">Pricing Package</a></li>
+        <li><a href="#contact-us">Contact</a></li>
+      </ul>
+
+      <div class="nav-action">
+
+        <?php if (isset($_SESSION['login'])): ?>
+          <!-- MUNCUL SAAT SUDAH LOGIN -->
+          <a href="join-member.php" class="btn-join">Join Sekarang</a>
+
+          <span style="color:white; margin:0 12px;">
+            Halo, <?= htmlspecialchars($_SESSION['username']); ?>!
+          </span>
+
+          <a href="logout.php" class="btn-join btn-logout">Logout</a>
+
+        <?php else: ?>
+          <!-- MUNCUL SAAT BELUM LOGIN -->
+          <a href="login.php" class="btn-join">Login</a>
+        <?php endif; ?>
+
+      </div>
+    </nav>
+
 
       <div class="hero-content-wrapper" id="home">
         <section class="banner-content">
@@ -56,7 +79,7 @@
               <p class="card-description">Belajar membangun aplikasi web dari front-end hingga back-end dengan teknologi terkini.</p>
               <div class="card-footer">
                 <span class="card-price">Rp 1.500.000</span>
-                <a href="#" class="card-button">Daftar</a>
+                <a href="#" class="card-button" onclick="handleDaftar()">Daftar</a>
               </div>
             </div>
           </div>
@@ -68,7 +91,7 @@
               <p class="card-description">Mulai karir sebagai UI/UX designer dengan mempelajari dasar-dasar desain antarmuka yang baik.</p>
               <div class="card-footer">
                 <span class="card-price">Rp 950.000</span>
-                <a href="#" class="card-button">Daftar</a>
+              <a href="#" class="card-button" onclick="handleDaftar()">Daftar</a>
               </div>
             </div>
           </div>
@@ -80,7 +103,7 @@
               <p class="card-description">Kuasai strategi pemasaran digital, dari SEO, SEM, hingga social media marketing.</p>
               <div class="card-footer">
                 <span class="card-price">Rp 1.250.000</span>
-                <a href="#" class="card-button">Daftar</a>
+                <a href="#" class="card-button" onclick="handleDaftar()">Daftar</a>
               </div>
             </div>
           </div>
@@ -92,7 +115,7 @@
               <p class="card-description">Analisis data dan buat model machine learning menggunakan Python dan library populer.</p>
               <div class="card-footer">
                 <span class="card-price">Rp 2.100.000</span>
-                <a href="#" class="card-button">Daftar</a>
+                <a href="#" class="card-button" onclick="handleDaftar()">Daftar</a>
               </div>
             </div>
           </div>
@@ -119,7 +142,7 @@
               <li class="disabled">Sertifikat kelulusan</li>
               <li class="disabled">Sesi mentoring 1-on-1</li>
             </ul>
-            <a href="#" class="btn-select-plan">Pilih Paket</a>
+            <a href="#" class="btn-select-plan">Coming Soon Yaa</a>
           </div>
 
           <div class="pricing-card recommended">
@@ -135,7 +158,7 @@
               <li>Sertifikat kelulusan</li>
               <li class="disabled">Sesi mentoring 1-on-1</li>
             </ul>
-            <a href="#" class="btn-select-plan">Pilih Paket</a>
+            <a href="#" class="btn-select-plan">Coming Soon Yaa</a>
           </div>
 
           <div class="pricing-card">
@@ -150,7 +173,7 @@
               <li>Sertifikat kelulusan</li>
               <li>Sesi mentoring 1-on-1</li>
             </ul>
-            <a href="#" class="btn-select-plan">Hubungi Sales</a>
+            <a href="#contact-us" class="btn-select-plan">Hubungi Sales</a>
           </div>
         </div>
       </section>
@@ -266,6 +289,19 @@
       </div>
     </footer>
     <!-- Footer -->
+          <div class="login-modal" id="loginModal">
+  <div class="modal-card">
+    <div class="modal-icon">🔒</div>
+    <h2>Kamu Belum Login</h2>
+    <p>
+      Untuk mendaftar kursus, silakan login terlebih dahulu ke akun kamu.
+    </p>
+    <div class="modal-actions">
+      <a href="login.php" class="btn-modal primary">Login Sekarang</a>
+      <button onclick="closeModal()" class="btn-modal secondary">Batal</button>
+    </div>
+  </div>
+</div>
 
     <script>
       // Ambil elemen navbar
@@ -281,5 +317,26 @@
         }
       };
     </script>
+    <script>
+  const isLogin = <?= isset($_SESSION['login']) ? 'true' : 'false'; ?>;
+
+  function handleDaftar() {
+    if (!isLogin) {
+      showLoginAlert();
+    } else {
+      window.location.href = 'join-member.php';
+    }
+  }
+</script>
+<script>
+  function showLoginAlert() {
+    document.getElementById('loginModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('loginModal').classList.remove('active');
+  }
+</script>
+
   </body>
 </html>

@@ -14,10 +14,10 @@
         </a>
       </div>
       <ul class="nav-links">
-        <li><a class="home" href="index.html#home">Home</a></li>
-        <li><a href="index.html#kursus">Course</a></li>
-        <li><a href="index.html#pricing">Pricing Package</a></li>
-        <li><a href="index.html#contact-us">Contact</a></li>
+        <li><a class="home" href="index.php#home">Home</a></li>
+        <li><a href="index.php#kursus">Course</a></li>
+        <li><a href="index.php#pricing">Pricing Package</a></li>
+        <li><a href="index.php#contact-us">Contact</a></li>
       </ul>
     </nav>
 
@@ -30,7 +30,7 @@
           <h2>Registrasi Member</h2>
         </div>
 
-        <form action="#" method="POST" class="join-form">
+        <form action="proses_join.php" method="POST" class="join-form">
           <div class="form-group">
             <label for="full-name">Nama Lengkap</label>
             <input type="text" id="full-name" name="fullName" placeholder="Masukkan nama lengkap Anda" required />
@@ -51,10 +51,10 @@
             <label for="course-select">Pilih Kursus Pertama Anda</label>
             <select id="course-select" name="course">
               <option value="">--Pilih Kursus--</option>
-              <option value="fullstack">Full-Stack Web Developer</option>
-              <option value="uiux">UI/UX Design for Beginners</option>
-              <option value="digital-marketing">Digital Marketing Mastery</option>
-              <option value="data-science">Data Science with Python</option>
+              <option value="Full Stack">Full-Stack Web Developer</option>
+              <option value="UI/UX">UI/UX Design for Beginners</option>
+              <option value="Digital Marketing">Digital Marketing Mastery</option>
+              <option value="Data Science">Data Science with Python</option>
             </select>
           </div>
           <button type="submit" class="btn-submit">Registrasi Sekarang</button>
@@ -72,10 +72,10 @@
         <div class="footer-links">
           <h3>Navigasi Cepat</h3>
           <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#kursus">Course</a></li>
-            <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="index.html#contact-us">Contact</a></li>
+            <li><a href="index.php#home">Home</a></li>
+            <li><a href="index.php#kursus">Course</a></li>
+            <li><a href="index.php#pricing">Pricing</a></li>
+            <li><a href="index.php#contact-us">Contact</a></li>
           </ul>
         </div>
 
